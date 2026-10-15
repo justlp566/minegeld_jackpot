@@ -1,14 +1,14 @@
 -- minegeld_jackpot/init.lua
 -- Handheld lottery ticket:
 --   - Normal use: +10 Minegeld
---   - Jackpot: 0.1% chance to win 1,000,000 Minegeld (broadcasted)
+--   - Jackpot: 1% chance to win 1,000,000 Minegeld (broadcasted)
 --   - Admins can set a player's "luck" (numeric). Effective jackpot chance = JACKPOT_CHANCE * (1 + luck)
 --     Setting very large luck (e.g., 1e10) will make jackpot effectively guaranteed.
 -- Requires the 'minegeld' mod.
 
 local SMALL_AWARD = 10
 local JACKPOT_AWARD = 1000000
-local JACKPOT_CHANCE = 0.001 -- 0.1%
+local JACKPOT_CHANCE = 0.01 -- 1%
 
 math.randomseed(os.time() + (os.clock() * 1000))
 
@@ -54,7 +54,7 @@ local function set_luck(target_name, value)
 end
 
 minetest.register_craftitem("minegeld_jackpot:ticket", {
-    description = "Lottery Ticket (0.1% jackpot)",
+    description = "Lottery Ticket (1% jackpot)",
     inventory_image = "minegeld_jackpot_ticket.png",
     stack_max = 64,
 

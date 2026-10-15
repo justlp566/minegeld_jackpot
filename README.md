@@ -4,7 +4,7 @@ A small Minetest mod for a handheld lottery ticket.
 
 Features:
 - Gives 10 Minegeld on a normal use
-- 0.1% chance to win 1,000,000 Minegeld jackpot
+- 1% chance to win 1,000,000 Minegeld jackpot
 - Broadcasts jackpot to the server chat
 - Brown and gold ticket with purple "J.W.I" artwork
 - Admin commands to set/get/clear a player's "luck" which modifies jackpot chance
@@ -15,10 +15,10 @@ Luck is a numeric value stored per-player. Effective jackpot chance is:
 
   effective_chance = base_chance * (1 + luck)
 
-Where base_chance = 0.001 (0.1%). For example:
-- luck = 0 -> chance = 0.001 (0.1%)
-- luck = 1 -> chance = 0.002 (0.2%)
-- luck = 999 -> chance = ~1 (capped at 1)
+Where base_chance = 0.01 (1%). For example:
+- luck = 0 -> chance = 0.01 (1%)
+- luck = 1 -> chance = 0.02 (2%)
+- luck = 99 -> chance = ~1 (capped at 1)
 
 Admins can set very large luck (e.g., 1e10) which will make jackpot effectively guaranteed.
 
